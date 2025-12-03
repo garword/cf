@@ -1,4 +1,4 @@
-name = "email-routing-manager"
+name = "email-routing-manager-cf"
 main = "src/index.js"
 compatibility_date = "2023-12-18"
 
