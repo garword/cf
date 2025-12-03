@@ -1,0 +1,28 @@
+{
+  "name": "email-routing-manager-workers",
+  "version": "1.0.0",
+  "description": "Email Routing Manager for Cloudflare Workers",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "tailwind": "tailwindcss -i ./src/input.css -o ./public/styles.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./public/styles.css --minify",
+    "db:migrate": "wrangler d1 migrations apply email-routing-db",
+    "db:local": "wrangler d1 migrations apply email-routing-db --local",
+    "db:schema": "wrangler d1 migrations create email-routing-db"
+  },
+  "dependencies": {
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "itty-router": "^4.0.25",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
+    "wrangler": "^3.22.4"
+  },
+  "type": "module"
+}

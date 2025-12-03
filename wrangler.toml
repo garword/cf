@@ -1,0 +1,35 @@
+name = "email-routing-manager"
+main = "src/index.js"
+compatibility_date = "2023-12-18"
+
+[env.production]
+name = "email-routing-manager-prod"
+
+[env.staging]
+name = "email-routing-manager-staging"
+
+# D1 Database
+[[d1_databases]]
+binding = "DB"
+database_name = "email-routing-db"
+database_id = "your-d1-database-id"
+
+# KV Storage for caching
+[[kv_namespaces]]
+binding = "CACHE"
+id = "your-kv-namespace-id"
+preview_id = "your-kv-preview-id"
+
+# Environment variables
+[vars]
+ENVIRONMENT = "development"
+MAX_CONFIGS = 4
+
+# CORS configuration
+[env.production.vars]
+ENVIRONMENT = "production"
+ALLOWED_ORIGINS = "https://your-domain.com"
+
+[env.staging.vars]
+ENVIRONMENT = "staging"
+ALLOWED_ORIGINS = "https://your-staging-domain.com"
