@@ -314,5 +314,8 @@ function emailRoutingManager() {
 
     // Helper method for template
     generateIndonesianName
+
+    // Helper method for template
+    generateIndonesianName
   };
 }
